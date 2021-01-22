@@ -14,15 +14,15 @@
     </modules>
 
     <scm>
-        <connection>scm:svn:file:///C:/Users/afonsojp/Desktop/SKAT/Projects/SVN/trunk</connection>
-        <developerConnection>scm:svn:file:///C:/Users/afonsojp/Desktop/SKAT/Projects/SVN/trunk</developerConnection>
+        <connection>scm:git:https://github.com/EnzimaGit/TestProject</connection>
+        <developerConnection>scm:git:https://github.com/EnzimaGit/TestProject</developerConnection>
     </scm>
 
     <distributionManagement>
         <repository>
             <id>distribution</id>
             <name>distribution</name>
-            <url>file:///C:/Users/afonsojp/Desktop/SKAT/Projects/SVN - Release</url>
+            <url>https://github.com/EnzimaGit/TestProject</url>
         </repository>
     </distributionManagement>
 
