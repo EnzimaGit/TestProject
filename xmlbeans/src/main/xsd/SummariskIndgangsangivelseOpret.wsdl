@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" name="SummariskIndgangsangivelseOpretService" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+   
+   <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      
+      <xs:documentation>Formålet med denne service er at oprette en summarisk indgangsangivelse.Formålet med denne service er at oprette en summarisk indgangsangivelse.</xs:documentation>
+   
+   </xs:annotation>
+   
+   <types>
+      
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+         
+         <xsd:include schemaLocation="schema/SummariskIndgangsangivelseOpretInterface.xsd"/>
+      
+      </xsd:schema>
+   
+   </types>
+   
+   <message name="SummariskIndgangsangivelseOpretServiceRequest">
+      
+      <part name="Request" element="fase2.1:SummariskIndgangsangivelseOpret_I"/>
+   
+   </message>
+   
+   <message name="SummariskIndgangsangivelseOpretServiceResponse">
+      
+      <part name="Response" element="fase2.1:SummariskIndgangsangivelseOpret_O"/>
+   
+   </message>
+   
+   <message name="KompenserTransRequest">
+      
+      <part name="Request" element="fase2.1:KompenserTrans"/>
+   
+   </message>
+   
+   <message name="KompenserTransResponse">
+      
+      <part name="Response" element="fase2.1:KompenserTransSvar"/>
+   
+   </message>
+   
+   <portType name="SummariskIndgangsangivelseOpretServicePortType">
+      
+      <operation name="getSummariskIndgangsangivelseOpret">
+         
+         <input message="fase2.1:SummariskIndgangsangivelseOpretServiceRequest"/>
+         
+         <output message="fase2.1:SummariskIndgangsangivelseOpretServiceResponse"/>
+      
+      </operation>
+      
+      <operation name="getKompenserTrans">
+         
+         <input message="fase2.1:KompenserTransRequest"/>
+         
+         <output message="fase2.1:KompenserTransResponse"/>
+      
+      </operation>
+   
+   </portType>
+
+   <binding name="SummariskIndgangsangivelseOpretServicePortBinding"
+     type="fase2.1:SummariskIndgangsangivelseOpretServicePortType">
+     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+     <operation name="getSummariskIndgangsangivelseOpret">
+       <soap:operation soapAction="" />
+       <input>
+         <soap:body use="literal" />
+       </input>
+       <output>
+         <soap:body use="literal" />
+       </output>
+     </operation>
+     <operation name="getKompenserTrans">
+       <soap:operation soapAction="" />
+       <input>
+         <soap:body use="literal" />
+       </input>
+       <output>
+         <soap:body use="literal" />
+       </output>
+     </operation>
+   </binding>
+   <service name="SummariskIndgangsangivelseOpretService">
+     <port name="SummariskIndgangsangivelseOpretServicePortType" binding="fase2.1:SummariskIndgangsangivelseOpretServicePortBinding">
+       <soap:address location="http://ics.dk.logica.com:7001/SummariskIndgangsangivelseOpret/SummariskIndgangsangivelseOpretService" />
+     </port>
+   </service>
+   
+</definitions>

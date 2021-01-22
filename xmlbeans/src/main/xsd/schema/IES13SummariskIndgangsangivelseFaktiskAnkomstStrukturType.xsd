@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r4134</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="TransportdeklarationMeddelelse.xsd"/>
+         <xs:include schemaLocation="Losningssted.xsd"/>
+         <xs:include schemaLocation="Toldsted.xsd"/>
+         <xs:include schemaLocation="Indgangsangivelse.xsd"/>
+         <xs:include schemaLocation="VarePost.xsd"/>
+         <xs:element name="IES13SummariskIndgangsangivelseFaktiskAnkomstStruktur"
+                     type="fase2.1:IES13SummariskIndgangsangivelseFaktiskAnkomstStrukturType"/>
+         <xs:complexType name="IES13SummariskIndgangsangivelseFaktiskAnkomstStrukturType">
+               <xs:sequence>
+               <xs:element name="IES13">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element name="Ankomstmeddelelse">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:TransportdeklarationMeddelelseReferenceNummer"/>
+                  
+                                 <xs:element ref="fase2.1:TransportdeklarationMeddelelseDatoTid"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                        <!--Sequence removed-->
+
+                           <xs:element name="FørsteLosnignssted" minOccurs="0">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2.1:LosningsstedKode"/>
+                  
+                                    <xs:element ref="fase2.1:ToldstedReferenceNummer"/>
+                                    <xs:element name="SummariskIndgangsangivelseListe">
+                                       <xs:complexType>
+                                          <xs:sequence>
+
+                                             <xs:element name="SummariskIndgangsangivelse" minOccurs="1" maxOccurs="9999">
+                                                <xs:complexType>
+                                                   <xs:sequence>
+                                                      <xs:element ref="fase2.1:IndgangsangivelseMRNNummer"/>
+                                                      <xs:element name="VarePostListe">
+                                                         <xs:complexType>
+                                                            <xs:sequence>
+
+                                                               <xs:element name="VarePost" minOccurs="0" maxOccurs="999">
+                                                                  <xs:complexType>
+                                                                     <xs:sequence>
+                                                                        <xs:element ref="fase2.1:VarePostLøbeNummer"/>
+                                                                     </xs:sequence>
+                                                                  </xs:complexType>
+                                                               </xs:element>
+                                                            </xs:sequence>
+                                                         </xs:complexType>
+                                                      </xs:element>
+
+                                                   </xs:sequence>
+                                                </xs:complexType>
+                                             </xs:element>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        
+
+                        <!--Sequence removed-->
+
+                           <xs:element name="EfterfølgendeLosningssted" minOccurs="0">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2.1:LosningsstedKode"/>
+                  
+                                    <xs:element ref="fase2.1:ToldstedReferenceNummer"/>
+                                    <xs:element name="SummariskIndgangsangivelseListe">
+                                       <xs:complexType>
+                                          <xs:sequence>
+
+                                             <xs:element name="SummariskIndgangsangivelse" minOccurs="1" maxOccurs="9999">
+                                                <xs:complexType>
+                                                   <xs:sequence>
+                                                      <xs:element ref="fase2.1:IndgangsangivelseMRNNummer"/>
+                                                      <xs:element name="VarePostListe">
+                                                         <xs:complexType>
+                                                            <xs:sequence>
+
+                                                               <xs:element name="VarePost" minOccurs="0" maxOccurs="999">
+                                                                  <xs:complexType>
+                                                                     <xs:sequence>
+                                                                        <xs:element ref="fase2.1:VarePostLøbeNummer"/>
+                                                                     </xs:sequence>
+                                                                  </xs:complexType>
+                                                               </xs:element>
+                                                            </xs:sequence>
+                                                         </xs:complexType>
+                                                      </xs:element>
+
+                                                   </xs:sequence>
+                                                </xs:complexType>
+                                             </xs:element>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

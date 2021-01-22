@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+  <xs:annotation>
+    <xs:documentation>En generaliseret klasse som rummer de e-AAD referencenumre på toldsteder, som relevante
+      myndigheder (import, export, tilsyn mv.) har.</xs:documentation>
+  </xs:annotation>
+  <xs:include schemaLocation="EUMyndighedNummerType.xsd" />
+  <xs:include schemaLocation="DatoType.xsd" />
+  <xs:element name="ToldstedReferenceNummer" type="fase2.1:EUMyndighedNummerType">
+    <xs:annotation>
+      <xs:documentation>En myndigheds referencenummer</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ToldstedGyldighedsDato" type="fase2.1:DatoType">
+  	<xs:annotation>
+      <xs:documentation>Et toldsteds gyldighedsdato</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  
+  <xs:simpleType name="ToldstedRolle">
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="ENT"/>
+        <xs:enumeration value="ENL"/>
+      </xs:restriction>
+    </xs:simpleType>
+  <xs:element name="ToldstedRolle" type="fase2.1:ToldstedRolle">
+      <xs:annotation>
+        <xs:documentation>Et toldsteds rolle</xs:documentation>
+      </xs:annotation>
+  </xs:element>
+</xs:schema>

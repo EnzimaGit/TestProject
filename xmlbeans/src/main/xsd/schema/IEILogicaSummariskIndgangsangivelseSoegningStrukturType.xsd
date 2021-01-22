@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fase2_1="http://skat.dk/begrebsmodel/2009/01/15/"
+  targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified"
+  version="1.0">
+  <xs:annotation>
+    <xs:documentation />
+  </xs:annotation>
+  <xs:include schemaLocation="Logica_SoegeKriterierIndgangsangivelse.xsd" />
+  <xs:element name="IEILogicaSummariskIndgangsangivelseSøgningStruktur" type="fase2_1:IEILogicaSummariskIndgangsangivelseSøgningStrukturType" />
+  <xs:complexType name="IEILogicaSummariskIndgangsangivelseSøgningStrukturType">
+    <xs:sequence>
+      <xs:element name="IEILogicaSummariskIndgangsangivelseSøgning">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="SoegeKriterier" type="fase2_1:SoegeKriterierIndgangsangivelse_IType" minOccurs="0" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

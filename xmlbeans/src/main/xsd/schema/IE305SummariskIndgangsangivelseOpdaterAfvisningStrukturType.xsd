@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+  <xs:annotation>
+    <xs:documentation />
+  </xs:annotation>
+  <xs:include schemaLocation="Indgangsangivelse.xsd" />
+  <xs:include schemaLocation="AfvisningBegrundelse.xsd" />
+  <xs:include schemaLocation="Sprog.xsd" />
+  <xs:include schemaLocation="SummariskAngivelse.xsd" />
+  <xs:include schemaLocation="Afvisning.xsd" />
+  <xs:include schemaLocation="FunktionelFejl.xsd" />
+  <xs:include schemaLocation="ToldOperatoer.xsd" />
+  <xs:include schemaLocation="EUOperatoer.xsd" />
+  <xs:include schemaLocation="AlternativAdresse.xsd" />
+  <xs:include schemaLocation="Land.xsd" />
+  <xs:include schemaLocation="Toldsted.xsd" />
+  <xs:element name="IE305SummariskIndgangsangivelseOpdaterAfvisningStruktur" type="fase2.1:IE305SummariskIndgangsangivelseOpdaterAfvisningStrukturType" />
+  <xs:complexType name="IE305SummariskIndgangsangivelseOpdaterAfvisningStrukturType">
+    <xs:sequence>
+      <xs:element name="IE305">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Hoved">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="fase2.1:IndgangsangivelseMRNNummer" />
+                  <xs:element ref="fase2.1:AfvisningBegrundelseKode" minOccurs="0" />
+                  <xs:element ref="fase2.1:AfvisningBegrundelseBeskrivelse" minOccurs="0" />
+                  <xs:element ref="fase2.1:SprogKode" minOccurs="0" />
+                  <xs:element ref="fase2.1:SummariskAngivelseÆndringDatoTid" />
+                  <xs:element ref="fase2.1:AfvisningDatoTid" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="FunktionelFejlListe">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="FunktionelFejl" minOccurs="0" maxOccurs="999">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element ref="fase2.1:FunktionelFejlType" />
+                        <xs:element ref="fase2.1:FunktionelFejlPointer" />
+                        <xs:element ref="fase2.1:FunktionelFejlBegrundelse" minOccurs="0" />
+                        <xs:element ref="fase2.1:FunktionelFejlOprindeligAttributVærdi" minOccurs="0" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="OperatørListe">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Operatør" minOccurs="0" maxOccurs="2">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element ref="fase2.1:ToldOperatørType" />
+                        <xs:element ref="fase2.1:EUOperatørNavn" minOccurs="0" />
+
+
+
+
+
+                        <!--Sequence removed-->
+                        <xs:element name="VejnavnNummer" minOccurs="0">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element ref="fase2.1:AlternativAdresseAdresseLinie1" />
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+
+
+
+
+
+
+
+
+                        <!--Sequence removed-->
+                        <xs:element name="Postkode" minOccurs="0">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element ref="fase2.1:AlternativAdresseAdresseLinie2" />
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+
+
+
+
+
+
+
+
+                        <!--Sequence removed-->
+                        <xs:element name="By" minOccurs="0">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element ref="fase2.1:AlternativAdresseAdresseLinie3" />
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element ref="fase2.1:LandKode" minOccurs="0" />
+                        <xs:element ref="fase2.1:SprogKode" minOccurs="0" />
+                        <xs:element ref="fase2.1:ToldOperatørTINNummer" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="FørsteIndgangToldsted">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="fase2.1:ToldstedReferenceNummer" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

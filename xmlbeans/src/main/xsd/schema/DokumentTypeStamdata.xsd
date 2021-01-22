@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+	<xs:annotation>
+		<xs:documentation />
+	</xs:annotation>
+	<xs:include schemaLocation="DokumentType.xsd" />
+	<xs:include schemaLocation="Sprog.xsd" />
+	<xs:include schemaLocation="StateType.xsd" />
+	<xs:element name="DokumentTypeStamdata">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="State" type="fase2.1:State"/>
+				<xs:element ref="fase2.1:DokumentType" />
+				<xs:element ref="fase2.1:DokumentTypeGyldighedsDato" />
+				<xs:element name="DokumentTypeBeskrivelseI18N" minOccurs="1"
+					maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="fase2.1:SprogKode" />
+							<xs:element ref="fase2.1:DokumentTypeBeskrivelse" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

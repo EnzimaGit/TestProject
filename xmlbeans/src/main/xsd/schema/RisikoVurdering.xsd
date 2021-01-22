@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+  <xs:annotation>
+    <xs:documentation>Også kaldet risikoanalyse. En automatisk vurdering/analyse af de indsendte oplysninger på en
+      Summarisk Indgangsangivelse. Resultatet udmyntes i en resultatkode for risikoen.</xs:documentation>
+  </xs:annotation>
+  <xs:include schemaLocation="Tekst5Type.xsd" />
+  <xs:include schemaLocation="Tekst350Type.xsd" />
+  <xs:include schemaLocation="DatoTidType.xsd" />
+  <xs:element name="RisikoVurderingResultatKode" type="fase2.1:Tekst5Type">
+    <xs:annotation>
+      <xs:documentation>Kode for risikoanalysens (-vurderingens) udfald, fx A = No Load.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RisikoVurderingTekst" type="fase2.1:Tekst350Type">
+    <xs:annotation>
+      <xs:documentation>Forklaring af analysens/vurderingens resultatkode.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RisikoVurderingAutomatiskDatoTid" type="fase2.1:DatoTidType">
+  </xs:element>
+  <xs:element name="RisikoVurderingManuelDatoTid" type="fase2.1:DatoTidType">
+  </xs:element>
+</xs:schema>

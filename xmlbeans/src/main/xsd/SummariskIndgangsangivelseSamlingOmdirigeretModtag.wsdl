@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" name="SummariskIndgangsangivelseSamlingOmdirigeretModtagService" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+   
+   <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      
+      <xs:documentation>Formålet med denne service er at sende en Summarisk indgangsangivelse til Danmark når summarisk indgangsangivelse er blevet omdirigeret til Danmark.</xs:documentation>
+   
+   </xs:annotation>
+   
+   <types>
+      
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+         
+         <xsd:include schemaLocation="schema/SummariskIndgangsangivelseSamlingOmdirigeretModtagInterface.xsd"/>
+      
+      </xsd:schema>
+   
+   </types>
+   
+   <message name="SummariskIndgangsangivelseSamlingOmdirigeretModtagServiceRequest">
+      
+      <part name="Request" element="fase2.1:SummariskIndgangsangivelseSamlingOmdirigeretModtag_I"/>
+   
+   </message>
+   
+   <message name="SummariskIndgangsangivelseSamlingOmdirigeretModtagServiceResponse">
+      
+      <part name="Response" element="fase2.1:SummariskIndgangsangivelseSamlingOmdirigeretModtag_O"/>
+   
+   </message>
+   
+   <message name="KompenserTransRequest">
+      
+      <part name="Request" element="fase2.1:KompenserTrans"/>
+   
+   </message>
+   
+   <message name="KompenserTransResponse">
+      
+      <part name="Response" element="fase2.1:KompenserTransSvar"/>
+   
+   </message>
+   
+   <portType name="SummariskIndgangsangivelseSamlingOmdirigeretModtagServicePortType">
+      
+      <operation name="getSummariskIndgangsangivelseSamlingOmdirigeretModtag">
+         
+         <input message="fase2.1:SummariskIndgangsangivelseSamlingOmdirigeretModtagServiceRequest"/>
+         
+         <output message="fase2.1:SummariskIndgangsangivelseSamlingOmdirigeretModtagServiceResponse"/>
+      
+      </operation>
+      
+      <operation name="getKompenserTrans">
+         
+         <input message="fase2.1:KompenserTransRequest"/>
+         
+         <output message="fase2.1:KompenserTransResponse"/>
+      
+      </operation>
+   
+   </portType>
+
+   <binding name="SummariskIndgangsangivelseSamlingOmdirigeretModtagServicePortBinding"
+     type="fase2.1:SummariskIndgangsangivelseSamlingOmdirigeretModtagServicePortType">
+     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+     <operation name="getSummariskIndgangsangivelseSamlingOmdirigeretModtag">
+       <soap:operation soapAction="" />
+       <input>
+         <soap:body use="literal" />
+       </input>
+       <output>
+         <soap:body use="literal" />
+       </output>
+     </operation>
+     <operation name="getKompenserTrans">
+       <soap:operation soapAction="" />
+       <input>
+         <soap:body use="literal" />
+       </input>
+       <output>
+         <soap:body use="literal" />
+       </output>
+     </operation>
+   </binding>
+   <service name="SummariskIndgangsangivelseSamlingOmdirigeretModtagService">
+     <port name="SummariskIndgangsangivelseSamlingOmdirigeretModtagServicePortType" binding="fase2.1:SummariskIndgangsangivelseSamlingOmdirigeretModtagServicePortBinding">
+       <soap:address location="http://ics.dk.logica.com:7001/SummariskIndgangsangivelseSamlingOmdirigeretModtag/SummariskIndgangsangivelseSamlingOmdirigeretModtagService" />
+     </port>
+   </service>
+   
+</definitions>

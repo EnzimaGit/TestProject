@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:include schemaLocation="KontekstType.xsd"/>
+	<xs:include schemaLocation="IE302SummariskIndgangsangivelseEUAnmodningStrukturType.xsd"/>
+	<xs:include schemaLocation="IEI10SummariskIndgangsangivelseAnmodningStrukturType.xsd"/>
+	<xs:include schemaLocation="IEILogicaSummariskIndgangsangivelseSoegningStrukturType.xsd"/>
+	<xs:include schemaLocation="IEALogicaIER49SearchForeignENSInputStrukturType.xsd"/>
+	<xs:include schemaLocation="IELogicaHistorikInputStruktur.xsd"/>
+	<xs:include schemaLocation="IELogicaHistorikDetaljeInputStruktur.xsd"/>
+	<xs:element name="SummariskIndgangsangivelseSamlingHent_I">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="fase2.1:SummariskIndgangsangivelseSamlingHent_IType">
+					<xs:attribute name="revision">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="r2277"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="SummariskIndgangsangivelseSamlingHent_IType">
+		<xs:sequence>
+			<xs:element ref="fase2.1:Kontekst"/>
+			<!--Sequence removed-->
+			<!--Sequence removed-->
+			<xs:element name="IEStrukturValg">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element ref="fase2.1:IE302SummariskIndgangsangivelseEUAnmodningStruktur"/>
+						<xs:element ref="fase2.1:IEI10SummariskIndgangsangivelseAnmodningStruktur"/>
+						<xs:element ref="fase2.1:IEILogicaSummariskIndgangsangivelseSøgningStruktur"/>
+						<xs:element ref="fase2.1:IEALogicaIER49SearchForeignENSInputStruktur"/>
+						<xs:element ref="fase2.1:IELogicaHistorikInputStruktur"/>
+						<xs:element ref="fase2.1:IELogicaHistorikDetaljeInputStruktur"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

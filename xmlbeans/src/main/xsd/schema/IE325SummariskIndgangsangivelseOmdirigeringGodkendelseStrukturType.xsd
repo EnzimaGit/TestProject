@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+  <xs:annotation>
+    <xs:documentation />
+  </xs:annotation>
+  <xs:include schemaLocation="SummariskAngivelseOmdirigering.xsd" />
+  <xs:include schemaLocation="Toldsted.xsd" />
+  <xs:include schemaLocation="ToldOperatoer.xsd" />
+  <xs:include schemaLocation="EUOperatoer.xsd" />
+  <xs:include schemaLocation="AlternativAdresse.xsd" />
+  <xs:include schemaLocation="Land.xsd" />
+  <xs:include schemaLocation="Sprog.xsd" />
+  <xs:element name="IE325SummariskIndgangsangivelseOmdirigeringGodkendelseStruktur" type="fase2.1:IE325SummariskIndgangsangivelseOmdirigeringGodkendelseStrukturType" />
+  <xs:complexType name="IE325SummariskIndgangsangivelseOmdirigeringGodkendelseStrukturType">
+    <xs:sequence>
+      <xs:element name="IE325">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Hoved">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="fase2.1:SummariskAngivelseOmdirigeringLokalReference" />
+                  <xs:element ref="fase2.1:SummariskAngivelseOmdirigeringDatoTid" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="FørsteIndgangToldsted">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="fase2.1:ToldstedReferenceNummer" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="OmdirigeringOperatør">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="fase2.1:ToldOperatørType" />
+                  <xs:element ref="fase2.1:EUOperatørNavn" minOccurs="0" />
+
+
+
+
+
+                  <!--Sequence removed-->
+                  <xs:element name="VejnavnNummer" minOccurs="0">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element ref="fase2.1:AlternativAdresseAdresseLinie1" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+
+
+
+
+
+
+
+
+                  <!--Sequence removed-->
+                  <xs:element name="Postkode" minOccurs="0">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element ref="fase2.1:AlternativAdresseAdresseLinie2" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+
+
+
+
+
+
+
+
+                  <!--Sequence removed-->
+                  <xs:element name="By" minOccurs="0">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element ref="fase2.1:AlternativAdresseAdresseLinie3" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element ref="fase2.1:LandKode" minOccurs="0" />
+                  <xs:element ref="fase2.1:SprogKode" minOccurs="0" />
+                  <xs:element ref="fase2.1:ToldOperatørTINNummer" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

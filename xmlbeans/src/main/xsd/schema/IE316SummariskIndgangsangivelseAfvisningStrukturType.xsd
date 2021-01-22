@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+  <xs:annotation>
+    <xs:documentation />
+  </xs:annotation>
+  <xs:include schemaLocation="SummariskAngivelse.xsd" />
+  <xs:include schemaLocation="Afvisning.xsd" />
+  <xs:include schemaLocation="AfvisningBegrundelse.xsd" />
+  <xs:include schemaLocation="Sprog.xsd" />
+  <xs:include schemaLocation="FunktionelFejl.xsd" />
+  <xs:element name="IE316SummariskIndgangsangivelseAfvisningStruktur" type="fase2.1:IE316SummariskIndgangsangivelseAfvisningStrukturType" />
+  <xs:complexType name="IE316SummariskIndgangsangivelseAfvisningStrukturType">
+    <xs:sequence>
+      <xs:element name="IE316">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Hoved">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="fase2.1:SummariskAngivelseLokalReference" />
+                  <xs:element ref="fase2.1:AfvisningDatoTid" />
+                  <xs:element ref="fase2.1:AfvisningBegrundelseBeskrivelse" minOccurs="0" />
+                  <xs:element ref="fase2.1:SprogKode" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="FunktionelFejlListe">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="FunktionelFejl" minOccurs="0" maxOccurs="999">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element ref="fase2.1:FunktionelFejlType" />
+                        <xs:element ref="fase2.1:FunktionelFejlPointer" />
+                        <xs:element ref="fase2.1:FunktionelFejlBegrundelse" minOccurs="0" />
+                        <xs:element ref="fase2.1:FunktionelFejlOprindeligAttributVærdi" minOccurs="0" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

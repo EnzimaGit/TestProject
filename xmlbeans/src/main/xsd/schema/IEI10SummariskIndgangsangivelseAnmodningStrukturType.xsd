@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+	<xs:annotation>
+		<xs:documentation />
+	</xs:annotation>
+	<xs:include schemaLocation="Transportmaade.xsd" />
+	<xs:include schemaLocation="Transportmiddel.xsd" />
+	<xs:include schemaLocation="SummariskAngivelse.xsd" />
+	<xs:include schemaLocation="Indgangsangivelse.xsd" />
+	<xs:include schemaLocation="VarePost.xsd" />
+	<xs:element name="IEI10SummariskIndgangsangivelseAnmodningStruktur"
+		type="fase2.1:IEI10SummariskIndgangsangivelseAnmodningStrukturType" />
+	<xs:complexType name="IEI10SummariskIndgangsangivelseAnmodningStrukturType">
+		<xs:sequence>
+			<xs:element name="IEI10">
+				<xs:complexType>
+					<xs:sequence>
+						<!--Sequence removed -->
+						<xs:element name="SammensatNøgle" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="fase2.1:TransportmådeKode" />
+									<xs:element ref="fase2.1:TransportmiddelIdentitet"
+										minOccurs="0" />
+									<xs:element ref="fase2.1:SummariskAngivelseRuteReferencenummer"
+										minOccurs="0" />
+									<xs:element ref="fase2.1:SummariskAngivelseForventetAnkomstDatoTid" />
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="ImportOperationListe">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="ImportOperation" minOccurs="0"
+										maxOccurs="999">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="fase2.1:IndgangsangivelseMRNNummer" />
+												<xs:element ref="fase2.1:VarePostLøbeNummer"
+													minOccurs="0" />
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

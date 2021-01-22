@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+  <xs:annotation>
+    <xs:documentation>Indeholder en liste over tilladte, EU fastsatte afvisningsbegrundelser som kan kobles på en
+      kvitteringsrapport.</xs:documentation>
+  </xs:annotation>
+  <xs:include schemaLocation="TalHelType.xsd" />
+  <xs:include schemaLocation="Tekst350Type.xsd" />
+  <xs:element name="AfvisningBegrundelseKode" type="fase2.1:TalHelType">
+    <xs:annotation>
+      <xs:documentation>Unik identifikation af afvisningens begrundelse.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AfvisningBegrundelseBeskrivelse" type="fase2.1:Tekst350Type">
+    <xs:annotation>
+      <xs:documentation>Selve afvisningsbegrundelsen.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

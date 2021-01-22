@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>Made by Logica</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="SummariskAngivelse.xsd"/>
+         <xs:include schemaLocation="FunktionelFejl.xsd"/>
+         <xs:include schemaLocation="Indgangsangivelse.xsd"/>
+         <xs:element name="IES14SummariskIndgangsangivelseFaktiskAnkomstSvarStruktur"
+                     type="fase2.1:IES14SummariskIndgangsangivelseFaktiskAnkomstSvarStrukturType"/>
+         <xs:complexType name="IES14SummariskIndgangsangivelseFaktiskAnkomstSvarStrukturType">
+               <xs:sequence>
+               <xs:element name="IES14">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="SummariskIndgangsangivelseListe">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element name="SummariskIndgangsangivelse" minOccurs="0" maxOccurs="9999">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:IndgangsangivelseMRNNummer"/>
+                                          <xs:element ref="fase2.1:SummariskAngivelseStatusKode" />
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                        <xs:element name="FunktionelFejlListe" minOccurs="0">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="FunktionelFejl" minOccurs="0" maxOccurs="99">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element ref="fase2.1:FunktionelFejlType" />
+                                    <xs:element ref="fase2.1:FunktionelFejlPointer" />
+                                    <xs:element ref="fase2.1:FunktionelFejlBegrundelse" />
+                                    <xs:element ref="fase2.1:FunktionelFejlOprindeligAttributVærdi" minOccurs="0" />
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:include schemaLocation="KontekstType.xsd"/>
+	<xs:include schemaLocation="Meddelelse.xsd"/>
+	<xs:include schemaLocation="IDType.xsd"/>
+	<xs:include schemaLocation="FilType.xsd"/>
+	<xs:element name="SummariskIndgangsangivelsePrint_O">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="fase2.1:SummariskIndgangsangivelsePrint_OType">
+					<xs:attribute name="revision">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="r2277"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="SummariskIndgangsangivelsePrint_OType">
+		<xs:sequence>
+			<xs:element ref="fase2.1:Kontekst"/>
+			<xs:element name="Meddelelse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="MeddelelseID" type="fase2.1:IDType"/>
+						<xs:element name="MeddelelseIndhold" type="fase2.1:FilType" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

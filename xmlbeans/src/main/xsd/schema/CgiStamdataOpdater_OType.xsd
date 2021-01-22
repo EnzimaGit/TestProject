@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 (http://www.altova.com) by Morten Ingof Skifter 
+	Jensen (logica) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+	targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	version="1.0">
+	<xs:include schemaLocation="FunktionelFejl.xsd" />
+	<xs:element name="CgiStamdataOpdater_O">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="fase2.1:CgiStamdataOpdater_OType">
+					<xs:attribute name="revision">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="r2277" />
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="CgiStamdataOpdater_OType">
+		<xs:sequence>
+			<xs:element name="Tabel" type="xs:string" />
+				<xs:element name="AntalRaekker" type="xs:int" />
+				<xs:element name="FunktionelFejlListe">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="FunktionelFejl" minOccurs="0"
+								maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="fase2.1:FunktionelFejlType" />
+										<xs:element ref="fase2.1:FunktionelFejlPointer" />
+										<xs:element ref="fase2.1:FunktionelFejlBegrundelse" />
+										<xs:element ref="fase2.1:FunktionelFejlOprindeligAttributVærdi"
+											minOccurs="0" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2_1="http://skat.dk/begrebsmodel/2009/01/15/">
+  <xs:annotation>
+    <xs:documentation />
+  </xs:annotation>
+  <xs:include schemaLocation="Indgangsangivelse.xsd" />
+  <xs:include schemaLocation="SummariskAngivelse.xsd" />
+  <xs:include schemaLocation="Transportmaade.xsd" />
+  <xs:include schemaLocation="Transportmiddel.xsd" />
+  <xs:include schemaLocation="Land.xsd" />
+  <xs:include schemaLocation="Lastningssted.xsd" />
+  <xs:include schemaLocation="Sprog.xsd" />
+  <xs:include schemaLocation="Losningssted.xsd" />
+  <xs:include schemaLocation="ToldOperatoer.xsd" />
+  <xs:include schemaLocation="EUOperatoer.xsd" />
+  <xs:include schemaLocation="AlternativAdresse.xsd" />
+  <xs:include schemaLocation="VarePost.xsd" />
+  <xs:include schemaLocation="Container.xsd" />
+  <xs:include schemaLocation="Kolli.xsd" />
+  <xs:include schemaLocation="KombineretNomenklatur.xsd" />
+  <xs:include schemaLocation="VABCertifikat.xsd" />
+  <xs:element name="IEI53UdenlandskSummariskIndgangsangivelseAnmodningSvarStruktur" type="fase2_1:IEI53UdenlandskSummariskIndgangsangivelseAnmodningSvarStrukturType" />
+  <xs:complexType name="IEI53UdenlandskSummariskIndgangsangivelseAnmodningSvarStrukturType">
+    <xs:sequence>
+      <xs:element name="IEI53">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ImportOperationListe">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ImportOperation" minOccurs="0" maxOccurs="999">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element ref="fase2_1:IndgangsangivelseMRNNummer" />
+                        <xs:element ref="fase2_1:SummariskAngivelseAntalVarePoster" />
+                        <xs:element ref="fase2_1:SummariskAngivelseAntalKolli" minOccurs="0" />
+                        <xs:element ref="fase2_1:SummariskAngivelseKommercielReferencenummer" minOccurs="0" />
+                        <xs:element name="Transportmidddel">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element ref="fase2_1:TransportmådeKode" />
+                              <xs:element ref="fase2_1:TransportmiddelIdentitet" minOccurs="0" />
+                              <xs:element ref="fase2_1:LandKode" minOccurs="0" />
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element ref="fase2_1:SummariskAngivelseRuteReferencenummer" minOccurs="0" />
+                        <xs:element name="Lastningssted">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element ref="fase2_1:LastningsstedKode" minOccurs="0" />
+                              <xs:element ref="fase2_1:SprogKode" minOccurs="0" />
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Losningssted">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element ref="fase2_1:LosningsstedKode" minOccurs="0" />
+                              <xs:element ref="fase2_1:SprogKode" minOccurs="0" />
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element ref="fase2_1:SummariskAngivelseTotalBruttoMasse" />
+                        <xs:element ref="fase2_1:SummariskAngivelseStatusKode" minOccurs="0" />
+                        <xs:element ref="fase2_1:SummariskAngivelseForventetAnkomstDatoTid" minOccurs="0" />
+                        <xs:element name="OperatørListe">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="Operatør" minOccurs="1" maxOccurs="unbounded">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element ref="fase2_1:ToldOperatørType" />
+                                    <xs:element ref="fase2_1:EUOperatørNavn" minOccurs="0" />
+
+
+
+
+
+                                    <!--Sequence removed-->
+                                    <xs:element name="VejnavnNummer" minOccurs="0">
+                                      <xs:complexType>
+                                        <xs:sequence>
+                                          <xs:element ref="fase2_1:AlternativAdresseAdresseLinie1" />
+                                        </xs:sequence>
+                                      </xs:complexType>
+                                    </xs:element>
+
+
+
+
+
+
+
+
+                                    <!--Sequence removed-->
+                                    <xs:element name="Postkode" minOccurs="0">
+                                      <xs:complexType>
+                                        <xs:sequence>
+                                          <xs:element ref="fase2_1:AlternativAdresseAdresseLinie2" />
+                                        </xs:sequence>
+                                      </xs:complexType>
+                                    </xs:element>
+
+
+
+
+
+
+
+
+                                    <!--Sequence removed-->
+                                    <xs:element name="By" minOccurs="0">
+                                      <xs:complexType>
+                                        <xs:sequence>
+                                          <xs:element ref="fase2_1:AlternativAdresseAdresseLinie3" />
+                                        </xs:sequence>
+                                      </xs:complexType>
+                                    </xs:element>
+                                    <xs:element ref="fase2_1:LandKode" minOccurs="0" />
+                                    <xs:element ref="fase2_1:SprogKode" minOccurs="0" />
+                                    <xs:element ref="fase2_1:ToldOperatørTINNummer" minOccurs="0" />
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="VarePostListe">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="VarePost" minOccurs="1" maxOccurs="999">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element ref="fase2_1:VarePostLøbeNummer" />
+                                    <xs:element ref="fase2_1:VarePostKommercielReferenceNummer" minOccurs="0" />
+                                    <xs:element ref="fase2_1:VarePostBruttoMasse" />
+                                    <xs:element ref="fase2_1:VarePostBeskrivelse" />
+                                    <xs:element name="ContainerListe">
+                                      <xs:complexType>
+                                        <xs:sequence>
+                                          <xs:element name="Container" minOccurs="0" maxOccurs="99">
+                                            <xs:complexType>
+                                              <xs:sequence>
+                                                <xs:element ref="fase2_1:ContainerID" />
+                                              </xs:sequence>
+                                            </xs:complexType>
+                                          </xs:element>
+                                        </xs:sequence>
+                                      </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="KolliListe">
+                                      <xs:complexType>
+                                        <xs:sequence>
+                                          <xs:element name="Kolli" minOccurs="0" maxOccurs="99">
+                                            <xs:complexType>
+                                              <xs:sequence>
+                                                <xs:element ref="fase2_1:KolliMærkeOgNummer" minOccurs="0" />
+                                                <xs:element ref="fase2_1:KolliArt" />
+                                                <xs:element ref="fase2_1:KolliAntal" minOccurs="0" />
+                                                <xs:element ref="fase2_1:KolliAntalEnheder" minOccurs="0" />
+                                              </xs:sequence>
+                                            </xs:complexType>
+                                          </xs:element>
+                                        </xs:sequence>
+                                      </xs:complexType>
+                                    </xs:element>
+                                    <xs:element ref="fase2_1:KombineretNomenklaturKode" minOccurs="0" />
+                                    <xs:element name="DokumentOgCertifikatListe">
+                                      <xs:complexType>
+                                        <xs:sequence>
+                                          <xs:element name="DokumentOgCertifikat" minOccurs="0" maxOccurs="99">
+                                            <xs:complexType>
+                                              <xs:sequence>
+                                                <xs:element ref="fase2_1:VABCertifikatType" />
+                                                <xs:element ref="fase2_1:VABCertifikatNummer" />
+                                              </xs:sequence>
+                                            </xs:complexType>
+                                          </xs:element>
+                                        </xs:sequence>
+                                      </xs:complexType>
+                                    </xs:element>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="DeklarationAfvisningListe">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="DeklarationAfvisning" minOccurs="0" maxOccurs="999">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element ref="fase2_1:IndgangsangivelseMRNNummer" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

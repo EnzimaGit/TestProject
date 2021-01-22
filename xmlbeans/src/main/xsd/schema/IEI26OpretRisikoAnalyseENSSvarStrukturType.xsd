@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r3767</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="Indgangsangivelse.xsd"/>
+         <xs:include schemaLocation="RisikoVurdering.xsd"/>
+         <xs:include schemaLocation="VarePost.xsd"/>
+         <xs:include schemaLocation="Sprog.xsd"/>
+         <xs:include schemaLocation="ToldFormalitet.xsd"/>
+         <xs:element name="IEI26OpretRisikoAnalyseENSSvarStruktur"
+                     type="fase2.1:IEI26OpretRisikoAnalyseENSSvarStrukturType"/>
+         <xs:complexType name="IEI26OpretRisikoAnalyseENSSvarStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="IEI26">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:IndgangsangivelseMRNNummer"/>
+
+                        <xs:element ref="fase2.1:IndgangsangivelseMRNNummerMarkering" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:RisikoVurderingManuelDatoTid" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:RisikoVurderingAutomatiskDatoTid" minOccurs="0"/>
+
+
+                        <xs:element name="VarePostListe">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element name="VarePost" minOccurs="1" maxOccurs="999">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:VarePostLøbeNummer"/>
+                                          <xs:element name="RisikoAnalyseListe">
+                                             <xs:complexType>
+                                                <xs:sequence>
+
+                                                   <xs:element name="RisikoAnalyse" minOccurs="1" maxOccurs="99">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element ref="fase2.1:RisikoVurderingResultatKode"/>
+
+                                                            <xs:element ref="fase2.1:RisikoVurderingTekst" minOccurs="0"/>
+
+
+
+                                                            <xs:element ref="fase2.1:SprogKode" minOccurs="0"/>
+
+
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+
+                                          <xs:element name="ToldFormalitetListe">
+                                             <xs:complexType>
+                                                <xs:sequence>
+
+                                                   <xs:element name="ToldFormalitet" minOccurs="0" maxOccurs="99">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element ref="fase2.1:ToldFormalitetKode"/>
+
+                                                            <xs:element ref="fase2.1:ToldFormalitetTekst" minOccurs="0"/>
+
+
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

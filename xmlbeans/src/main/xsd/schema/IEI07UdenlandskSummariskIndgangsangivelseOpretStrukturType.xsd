@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+  <xs:annotation>
+    <xs:documentation />
+  </xs:annotation>
+  <xs:include schemaLocation="Indgangsangivelse.xsd" />
+  <xs:include schemaLocation="Transportmaade.xsd" />
+  <xs:include schemaLocation="Transportmiddel.xsd" />
+  <xs:include schemaLocation="Land.xsd" />
+  <xs:include schemaLocation="Losningssted.xsd" />
+  <xs:include schemaLocation="SummariskAngivelse.xsd" />
+  <xs:include schemaLocation="Container.xsd" />
+  <xs:include schemaLocation="Transportdeklaration.xsd" />
+  <xs:include schemaLocation="ManifestPost.xsd" />
+  <xs:element name="IEI07UdenlandskSummariskIndgangsangivelseOpretStruktur" type="fase2.1:IEI07UdenlandskSummariskIndgangsangivelseOpretStrukturType" />
+  <xs:complexType name="IEI07UdenlandskSummariskIndgangsangivelseOpretStrukturType">
+    <xs:sequence>
+      <xs:element name="IEI07">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ImportOperation">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="fase2.1:IndgangsangivelseMRNNummer" />
+                  <xs:element name="Transportmidddel">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element ref="fase2.1:TransportmådeKode" />
+                        <xs:element ref="fase2.1:TransportmiddelIdentitet" minOccurs="0" />
+                        <xs:element ref="fase2.1:LandKode" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="Losningssted">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element ref="fase2.1:LosningsstedKode" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element ref="fase2.1:SummariskAngivelseForventetAnkomstDatoTid" />
+                  <xs:element ref="fase2.1:SummariskAngivelseRuteReferencenummer" />
+                  <xs:element name="ContainerListe">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="Container" minOccurs="0" maxOccurs="99">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element ref="fase2.1:ContainerID" />
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Transportdeklaration">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="fase2.1:TransportdeklarationReferenceNummer" />
+                  <xs:element name="ManifestPost">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element ref="fase2.1:ManifestPostLøbeNummer" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

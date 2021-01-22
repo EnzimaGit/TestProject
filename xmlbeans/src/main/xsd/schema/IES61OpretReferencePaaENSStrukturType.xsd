@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+  <xs:annotation>
+    <xs:documentation />
+  </xs:annotation>
+  <xs:include schemaLocation="Indgangsangivelse.xsd" />
+  <xs:include schemaLocation="VarePost.xsd" />
+  <xs:include schemaLocation="MidlertidigOpbevaring.xsd" />
+  <xs:include schemaLocation="ToldDeklaration.xsd" />
+  <xs:include schemaLocation="Transportdeklaration.xsd" />
+  <xs:include schemaLocation="ManifestPost.xsd" />
+  <xs:element name="IES61OpretReferencePåENSStruktur" type="fase2.1:IES61OpretReferencePåENSStrukturType" />
+  <xs:complexType name="IES61OpretReferencePåENSStrukturType">
+    <xs:sequence>
+      <xs:element name="IES61">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ImportOperation">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="fase2.1:IndgangsangivelseMRNNummer" />
+                  <xs:element name="VarePostListe">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="VarePost" minOccurs="0" maxOccurs="999">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element ref="fase2.1:VarePostLøbeNummer" />
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ReferenceValg">
+              <xs:complexType>
+                <xs:choice>
+                  <xs:sequence>
+                    <xs:element name="MidlertidigOpbevaring">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="fase2.1:MidlertidigOpbevaringMIONummer" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:sequence>
+                    <xs:element name="Fortoldning">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="fase2.1:ToldDeklarationReferenceNummer" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:sequence>
+                    <xs:element name="Ankomstsdeklaration">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="fase2.1:TransportdeklarationReferenceNummer" />
+                          <xs:element name="ManifestPostListe">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ManifestPost" minOccurs="0" maxOccurs="99">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element ref="fase2.1:ManifestPostLøbeNummer" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:sequence>
+                    <xs:element name="Afgangsdeklaration">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="fase2.1:TransportdeklarationReferenceNummer" />
+                          <xs:element name="ManifestPostListe">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ManifestPost" minOccurs="0" maxOccurs="99">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element ref="fase2.1:ManifestPostLøbeNummer" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:choice>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

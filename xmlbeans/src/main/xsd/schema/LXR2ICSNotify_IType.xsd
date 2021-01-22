@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 (http://www.altova.com) by Morten Ingof Skifter Jensen (logica) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:include schemaLocation="IE412StrukturType.xsd"/>
+	<xs:include schemaLocation="IE031StrukturType.xsd"/>
+	<xs:include schemaLocation="IE032StrukturType.xsd"/>
+	<xs:include schemaLocation="IE931StrukturType.xsd"/>
+	<xs:include schemaLocation="IE932StrukturType.xsd"/>
+	<xs:element name="LXR2ICSNotify_I">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="fase2.1:LXR2ICSNotify_IType">
+					<xs:attribute name="revision">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="r2277"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="LXR2ICSNotify_IType">
+		<xs:sequence>
+			<xs:element name="IEStrukturValg" minOccurs="0">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element ref="fase2.1:IE031Struktur"/>
+						<xs:element ref="fase2.1:IE032Struktur"/>
+						<xs:element ref="fase2.1:IE412Struktur"/>
+						<xs:element ref="fase2.1:IE931Struktur"/>
+						<xs:element ref="fase2.1:IE932Struktur"/>
+						<xs:element name="plainXML" type="xs:string"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

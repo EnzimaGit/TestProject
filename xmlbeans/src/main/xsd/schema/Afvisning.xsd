@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+  <xs:annotation>
+    <xs:documentation>Et toldsted kan også afvise en leverance, hvilket bliver specificeret ved tilknytning af status
+      (KvitteringStatus), når eksport eller toldopbevaring er afvist i kvitteringstatus, skal Afvis klassen benyttes,
+      hvor toldsted og den ansvarlige for afvisningen, samt afvisningsdato specificeres.</xs:documentation>
+  </xs:annotation>
+  <xs:include schemaLocation="NavnType.xsd" />
+  <xs:include schemaLocation="DatoTidType.xsd" />
+  <xs:element name="AfvisningAnsvarlig" type="fase2.1:NavnType">
+    <xs:annotation>
+      <xs:documentation>Navnet på den aktuelle ansvarlige for toldstedets afvisning af leverancen.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AfvisningDatoTid" type="fase2.1:DatoTidType">
+    <xs:annotation>
+      <xs:documentation>Gennemførselsdato for afvisning</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

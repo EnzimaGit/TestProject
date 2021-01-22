@@ -1,0 +1,5 @@
+<xb:config xmlns:xb="http://www.bea.com/2002/09/xbean/config">
+    <xb:namespace uri="http://skat.dk/begrebsmodel/2009/01/15/">
+        <xb:package>dk.skat.ics.begrebsmodel.x2009.x01.x15</xb:package>
+    </xb:namespace>
+</xb:config>

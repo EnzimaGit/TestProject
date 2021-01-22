@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r4076</xs:documentation>
+         </xs:annotation>
+         <xs:element name="IEI28GensendICSTilRisikoStruktur"
+                     type="fase2.1:IEI28GensendICSTilRisikoStrukturType"/>
+         <xs:complexType name="IEI28GensendICSTilRisikoStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+               <xs:sequence>
+               <xs:element name="IEI28">
+                  <xs:complexType>
+                     <xs:sequence>
+</xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

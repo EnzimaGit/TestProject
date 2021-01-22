@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+  <xs:annotation>
+    <xs:documentation>Formålet med denne service er at kunne bede det danske ICS om at hente oplysninnger omkring en
+      summarisk indgangsangivelse hos et andet EU-land</xs:documentation>
+  </xs:annotation>
+  <xs:include schemaLocation="SummariskIndgangsangivelseUdenlandskHent_IType.xsd" />
+  <xs:include schemaLocation="SummariskIndgangsangivelseUdenlandskHent_OType.xsd" />
+  <xs:include schemaLocation="KompenserTransType.xsd" />
+  <xs:include schemaLocation="KompenserTransSvarType.xsd" />
+  <xs:element name="SummariskIndgangsangivelseUdenlandskHentInterface" type="fase2.1:SummariskIndgangsangivelseUdenlandskHentInterfaceType" />
+  <xs:complexType name="SummariskIndgangsangivelseUdenlandskHentInterfaceType">
+    <xs:choice>
+      <xs:element ref="fase2.1:SummariskIndgangsangivelseUdenlandskHent_I" />
+      <xs:element ref="fase2.1:SummariskIndgangsangivelseUdenlandskHent_O" />
+      <xs:element ref="fase2.1:KompenserTrans" />
+      <xs:element ref="fase2.1:KompenserTransSvar" />
+    </xs:choice>
+  </xs:complexType>
+</xs:schema>

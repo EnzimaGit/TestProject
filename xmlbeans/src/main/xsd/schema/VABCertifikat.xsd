@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2_1="http://skat.dk/begrebsmodel/2009/01/15/">
+  <xs:annotation>
+    <xs:documentation>Omfatter VAB-certifkater og dokumenter der er tilknyttet vareposten. Foreksempel,
+      våbentilladelser.</xs:documentation>
+  </xs:annotation>
+  <xs:include schemaLocation="Tekst8Type.xsd" />
+  <xs:include schemaLocation="Tekst35Type.xsd" />
+  <xs:include schemaLocation="Tekst2Type.xsd" />
+  <xs:element name="VABCertifikatType" type="fase2_1:Tekst8Type">
+    <xs:annotation>
+      <xs:documentation>Kode som skal specificere hvilke dokumenter og certifikater som er udfærdiget til varerne. FX
+        N325 for en proformafaktura</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="VABCertifikatNummer" type="fase2_1:Tekst35Type">
+    <xs:annotation>
+      <xs:documentation>Reference til de udfærdigere dokumenter og certifikater Eksempel: Proformafaktura nr. 950445/06,
+        dateret den 1.2.2006, vedlægges angivelsen. Nedenstående TARIC-kode for certifikatet for proformafakturaen
+        efterfulgt af de relevante oplysninger angives i rubrik 44: N325 950445/06 01.02.2006.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="VABCertifikatVareBestemmelser" type="fase2_1:Tekst2Type">
+    <xs:annotation>
+      <xs:documentation>Kode der angiver hvilken varebestemmelse der skal iagttages i forbindelse med vareførslen.
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

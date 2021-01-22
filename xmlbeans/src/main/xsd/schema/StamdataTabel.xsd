@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+	<xs:annotation>
+		<xs:documentation />
+	</xs:annotation>
+	<xs:simpleType name="StamdataTabel">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="LAND" />
+			<xs:enumeration value="DOKUMENT_TYPE" />
+			<xs:enumeration value="KOLLI_ART" />
+			<xs:enumeration value="TRANSPORT_MAADE" />
+			<xs:enumeration value="SAERLIG_BEMAERKNING" />
+			<xs:enumeration value="SPECIELLE_FORHOLD_MARKERING" />
+			<xs:enumeration value="FN_FARLIGT_GODS" />
+			<xs:enumeration value="INFORMATION_TYPE" />
+			<xs:enumeration value="TRANSPORTUDGIFTER_BETALINGSMAADE" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="StamdataTabel" type="fase2.1:StamdataTabel">
+		<xs:annotation>
+			<xs:documentation>Indikere en stamdata tabel</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

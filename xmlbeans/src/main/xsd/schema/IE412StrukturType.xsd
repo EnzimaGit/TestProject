@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r3629</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="StatistiskKonsolidering.xsd"/>
+         <xs:include schemaLocation="StatistiskeKaraktaristika.xsd"/>
+         <xs:include schemaLocation="SerieElementer.xsd"/>
+         <xs:element name="IE412Struktur" type="fase2.1:IE412StrukturType"/>
+         <xs:complexType name="IE412StrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="IE412">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element name="StatistiskKonsolidering">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:StatistiskKonsolideringÅr"/>
+                  
+                                 <xs:element ref="fase2.1:StatistiskKonsolideringMåned"/>
+                  
+                                 <xs:element ref="fase2.1:StatistiskKonsolideringForretningStatistikDomæne"/>
+                                 <xs:element name="StatistiskeKaraktaristikaListe">
+                                    <xs:complexType>
+                                       <xs:sequence>
+
+                                          <xs:element name="StatistiskeKaraktaristika" minOccurs="1" maxOccurs="999">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="fase2.1:StatistiskeKaraktaristikaStatistikType"/>
+                                                   <xs:element name="SerieElementerListe">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+
+                                                            <xs:element name="SerieElementer" minOccurs="1" maxOccurs="999">
+                                                               <xs:complexType>
+                                                                  <xs:sequence>
+
+                                                                     <xs:element ref="fase2.1:SerieElementerSendendeLand" minOccurs="0"/>
+
+
+
+                                                                     <xs:element ref="fase2.1:SerieElementerAndetLand" minOccurs="0"/>
+
+                                                                     <xs:element ref="fase2.1:SerieElementerTæller"/>
+                                                                  </xs:sequence>
+                                                               </xs:complexType>
+                                                            </xs:element>
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

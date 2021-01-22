@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" name="ICSPingService" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+   
+   <types>
+      
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+         
+         <xsd:include schemaLocation="schema/PingInterface.xsd"/>
+      
+      </xsd:schema>
+   
+   </types>
+   
+   <message name="ICSPingServiceRequest">
+      
+      <part name="Request" element="fase2.1:PingService_I"/>
+   
+   </message>
+   
+   <message name="ICSPingServiceResponse">
+      
+      <part name="Response" element="fase2.1:PingService_O"/>
+   
+   </message>
+   
+   <portType name="ICSPingServicePortType">
+      
+      <operation name="getPingService">
+         
+         <input message="fase2.1:ICSPingServiceRequest"/>
+         
+         <output message="fase2.1:ICSPingServiceResponse"/>
+      
+      </operation>
+      
+   </portType>
+
+   <binding name="ICSPingServicePortBinding" type="fase2.1:ICSPingServicePortType">
+     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+     <operation name="getPingService">
+       <soap:operation soapAction="" />
+       <input>
+         <soap:body use="literal" />
+       </input>
+       <output>
+         <soap:body use="literal" />
+       </output>
+     </operation>
+   </binding>
+   <service name="ICSPingService">
+     <port name="ICSPingServicePortType" binding="fase2.1:ICSPingServicePortBinding">
+       <soap:address location="http://ics.dk.logica.com:7001/ics/ICSPingService" />
+     </port>
+   </service>
+   
+</definitions>

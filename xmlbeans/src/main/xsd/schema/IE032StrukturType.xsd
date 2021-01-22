@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+	<xs:annotation>
+		<xs:documentation />
+	</xs:annotation>
+
+
+	<xs:include schemaLocation="LandekodeStamdata.xsd" />
+	<xs:include schemaLocation="DokumentTypeStamdata.xsd" />
+	<xs:include schemaLocation="KolliArtStamdata.xsd" />
+	<xs:include schemaLocation="TransportMaadeStamdata.xsd" />
+	<xs:include schemaLocation="AdditionalInformationStamdata.xsd" />
+	<xs:include schemaLocation="SpecielleForholdMarkeringStamdata.xsd" />
+	<xs:include schemaLocation="FNFarligtGodsStamdata.xsd" />
+	<xs:include schemaLocation="InformationTypeStamdata.xsd" />
+	<xs:include schemaLocation="TransportUdgiftBetalingsMaadeStamdata.xsd" />
+	
+	<xs:element name="IE032Struktur" type="fase2.1:IE032StrukturType" />
+	<xs:complexType name="IE032StrukturType">
+		<xs:sequence>
+			<xs:element name="IE032">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="fase2.1:LandekodeStamdata" minOccurs="0" maxOccurs="unbounded" />
+						<xs:element ref="fase2.1:DokumentTypeStamdata" minOccurs="0" maxOccurs="unbounded" />
+						<xs:element ref="fase2.1:KolliArtStamdata" minOccurs="0" maxOccurs="unbounded" />
+						<xs:element ref="fase2.1:TransportMaadeStamdata" minOccurs="0"	maxOccurs="unbounded"/>
+						<xs:element ref="fase2.1:AdditionalInformationIdStamdata" minOccurs="0" maxOccurs="unbounded" />
+						<xs:element ref="fase2.1:SpecielleForholdMarkeringStamdata" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="fase2.1:FNFarligtGodsStamdata" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="fase2.1:InformationTypeStamdata" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="fase2.1:TransportUdgiftBetalingsMaadeStamdata" minOccurs="0" maxOccurs="unbounded" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

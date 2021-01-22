@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" name="AdviseringSamlingHentService" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+   
+   <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      
+      <xs:documentation>Formålet med denne 'service' er at skabe et holdested de forskellige notify dokumenttyper</xs:documentation>
+   
+   </xs:annotation>
+   
+   <types>
+      
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+         
+         <xsd:include schemaLocation="schema/ICS2CompanyNotifyInterface.xsd"/>
+      
+      </xsd:schema>
+   
+   </types>
+   
+   <message name="ICSLogicaNotifyServiceRequest">
+      
+      <part name="Request" element="fase2.1:ICS2CompanyNotify_I"/>
+   
+   </message>
+   
+   <message name="ICSLogicaNotifyServiceResponse">
+      
+      <part name="Response" element="fase2.1:ICS2CompanyNotify_O"/>
+   
+   </message>
+   
+   <portType name="ICSLogicaNotifyServicePortType">
+      
+      <operation name="getICSLogicaNotify">
+         
+         <input message="fase2.1:ICSLogicaNotifyServiceRequest"/>
+         
+         <output message="fase2.1:ICSLogicaNotifyServiceResponse"/>
+      
+      </operation>
+      
+   </portType>
+
+   <binding name="ICSLogicaNotifyServicePortBinding"
+     type="fase2.1:ICSLogicaNotifyServicePortType">
+     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+     <operation name="getICSLogicaNotify">
+       <soap:operation soapAction="" />
+       <input>
+         <soap:body use="literal" />
+       </input>
+       <output>
+         <soap:body use="literal" />
+       </output>
+     </operation>
+   </binding>
+   <service name="ICSLogicaNotifyService">
+     <port name="ICSLogicaNotifyServicePortType" binding="fase2.1:ICSLogicaNotifyServicePortBinding">
+       <soap:address location="http://ics.dk.logica.com:7001/ICSLogicaNotify/ICSLogicaNotifyService" />
+     </port>
+   </service>
+   
+</definitions>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fase2_1="http://skat.dk/begrebsmodel/2009/01/15/"
+  targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified"
+  version="1.0">
+  <xs:include schemaLocation="DatoTidType.xsd" />
+  <xs:include schemaLocation="Tekst8Type.xsd" />
+  <xs:include schemaLocation="Tekst35Type.xsd" />
+  <xs:include schemaLocation="Tekst30Type.xsd" />
+  <xs:include schemaLocation="Tekst300Type.xsd" />
+  <xs:include schemaLocation="MRNType.xsd" />
+  <xs:include schemaLocation="Tekst1Type.xsd" />
+  <xs:complexType name="SoegeKriterierDiversion_IType">
+    <xs:sequence>
+      <xs:element name="LRNNummer" type="fase2_1:MRNType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Search using the LRN for diversions</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RegistratorTIN" type="fase2_1:Tekst35Type" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Search using the TIN number from the registrator</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OprettetFra" type="fase2_1:DatoTidType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Find ENS that were created after this date</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OprettetTil" type="fase2_1:DatoTidType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Find ENS that were created before this date</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TransportmaadeKodeVedGraense" type="fase2_1:Tekst1Type" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Koden for transportmåden - for eksempel 1 for søtransport. Liste kan ses i GB Bilag 38,
+            rubrik 25</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TransportmiddelIdentitet" type="fase2_1:Tekst30Type" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Identifikationsnummer på transportmidlet fx reg.nr på lastbil eller IMO på skibe.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RuteNr" type="fase2_1:Tekst35Type" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Find ENS used a transport vehicle with this number fx a flight number</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FaktiskAnkomstFra" type="fase2_1:DatoTidType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Find ENS that were expected to arrive after this date</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FaktiskAnkomstTil" type="fase2_1:DatoTidType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Find ENS that were expected to arrive before this date</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="KodeForFoersteIndgangstoldsted" type="fase2_1:Tekst8Type" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Find ENS that reference OOFE by this place</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

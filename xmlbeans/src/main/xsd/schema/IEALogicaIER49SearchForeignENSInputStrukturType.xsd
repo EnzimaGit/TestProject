@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>
+      </xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="DatoTidType.xsd"/>
+	<xs:element name="IEALogicaIER49SearchForeignENSInputStruktur" type="fase2.1:IEALogicaIER49SearchForeignENSInputStrukturType"/>
+	<xs:complexType name="IEALogicaIER49SearchForeignENSInputStrukturType">
+		<xs:sequence>
+			<xs:element name="IEALogicaIER49SearchForeignENSInput">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="DateFrom" type="fase2.1:DatoTidType" minOccurs="0"/>
+						<xs:element name="DateTo" type="fase2.1:DatoTidType" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

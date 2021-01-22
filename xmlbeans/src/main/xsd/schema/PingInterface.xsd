@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:element name="PingInterface" type="fase2.1:PingInterfaceType"/>
+	<xs:complexType name="PingInterfaceType">
+		<xs:choice>
+			<xs:element ref="fase2.1:PingService_I"/>
+			<xs:element ref="fase2.1:PingService_O"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:element name="PingService_I">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="fase2.1:PingService_IType"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="PingService_IType">
+		<xs:sequence>
+			<xs:element ref="fase2.1:RequestParamListe" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PingService_O">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="fase2.1:PingService_OType"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="PingService_OType">
+		<xs:sequence>
+			<xs:element ref="fase2.1:RequestParamListe" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="RequestParamListe">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RequestParam" type="fase2.1:RequestParamListeType" minOccurs="0" maxOccurs="100"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="RequestParamListeType">
+		<xs:sequence>
+			<xs:element name="ParamName" type="xs:string" minOccurs="0"/>
+			<xs:element name="ParamValue" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

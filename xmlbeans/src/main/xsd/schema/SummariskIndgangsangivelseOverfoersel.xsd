@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+  <xs:annotation>
+    <xs:documentation>Data der følger med overført ENS fra andet EU land</xs:documentation>
+  </xs:annotation>
+  <xs:include schemaLocation="MarkeringType.xsd" />
+  <xs:include schemaLocation="Tekst2Type.xsd" />
+  <xs:include schemaLocation="Tekst30Type.xsd" />
+  <xs:element name="SummariskAngivelseOverførselRisikoMarkering" type="fase2.1:MarkeringType">
+    <xs:annotation>
+      <xs:documentation>Markering af hvorvidt én eller flere af en overførsels summariske indgangsangivelser har en
+        risiko.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SummariskIndgangsangivelseOverførselType" type="fase2.1:Tekst2Type">
+    <xs:annotation>
+      <xs:documentation>Fortæller hvilke data der følger med en overførsel af summarisk indgangsangivelse (ENS). for
+        eksempel om det er hele den summariske indgangsangivelse eller kun risikooplysninger om den.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SummariskIndgangsangivelseOverførselReference" type="fase2.1:Tekst30Type">
+    <xs:annotation>
+      <xs:documentation>Reference nummer der identifecerer en oversel af ENS data internt i EU.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

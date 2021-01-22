@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fase2_1="http://skat.dk/begrebsmodel/2009/01/15/" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:include schemaLocation="MRNType.xsd"/>
+	<xs:element name="IELogicaHistorikInputStruktur" type="fase2_1:IELogicaHistorikInputStrukturType"/>
+	<xs:complexType name="IELogicaHistorikInputStrukturType">
+		<xs:sequence>
+			<xs:element name="IELogicaHistorikInputElement">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="MRNNummer" type="fase2_1:MRNType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

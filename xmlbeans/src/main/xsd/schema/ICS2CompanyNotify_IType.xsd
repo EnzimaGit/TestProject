@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+  <xs:include schemaLocation="KontekstType.xsd" />
+  <xs:include schemaLocation="IE322StrukturType.xsd" />
+  <xs:include schemaLocation="IE329StrukturType.xsd" />
+  <xs:include schemaLocation="IE330StrukturType.xsd" />
+  <xs:include schemaLocation="IE351StrukturType.xsd" />
+  <xs:include schemaLocation="IE361StrukturType.xsd" />
+  <xs:include schemaLocation="IE328SummariskIndgangsangivelseGodkendelseStrukturType.xsd" />
+  <xs:element name="ICS2CompanyNotify_I">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="fase2.1:ICS2CompanyNotify_IType">
+          <xs:attribute name="revision">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="r2277" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ICS2CompanyNotify_IType">
+    <xs:sequence>
+      <xs:element ref="fase2.1:Kontekst" />
+      <xs:element name="messageReceiver" type="xs:string" />
+      <xs:element name="IEStrukturValg" minOccurs="0">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element ref="fase2.1:IE322Struktur" />
+            <xs:element ref="fase2.1:IE329Struktur" />
+            <xs:element ref="fase2.1:IE330Struktur" />
+            <xs:element ref="fase2.1:IE351Struktur" />
+            <xs:element ref="fase2.1:IE361Struktur" />
+            <xs:element ref="fase2.1:IE328SummariskIndgangsangivelseGodkendelseStruktur" />
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

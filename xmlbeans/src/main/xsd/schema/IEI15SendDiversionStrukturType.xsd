@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+  <xs:annotation>
+    <xs:documentation />
+  </xs:annotation>
+  <xs:include schemaLocation="SummariskAngivelseOmdirigering.xsd" />
+  <xs:include schemaLocation="Land.xsd" />
+  <xs:include schemaLocation="Transportmaade.xsd" />
+  <xs:include schemaLocation="Transportmiddel.xsd" />
+  <xs:include schemaLocation="SummariskAngivelse.xsd" />
+  <xs:include schemaLocation="FunktionelFejl.xsd" />
+  <xs:element name="IEI15SendDiversionStruktur" type="fase2.1:IEI15SendDiversionStrukturType" />
+  <xs:complexType name="IEI15SendDiversionStrukturType">
+    <xs:sequence>
+      <xs:element name="IEI15">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Indgangsangivelse">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="fase2.1:SummariskAngivelseOmdirigeringLokalReference" />
+                  <xs:element ref="fase2.1:LandKode" minOccurs="0" />
+                  <xs:element ref="fase2.1:TransportmådeKode" minOccurs="0" />
+                  <xs:element ref="fase2.1:TransportmiddelIdentitet" minOccurs="0" />
+                  <xs:element ref="fase2.1:SummariskAngivelseForventetAnkomstDatoTid" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+
+
+
+            <!--Sequence removed-->
+            <xs:element name="FunktionelFejl" minOccurs="0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="fase2.1:FunktionelFejlType" />
+                  <xs:element ref="fase2.1:FunktionelFejlPointer" />
+                  <xs:element ref="fase2.1:FunktionelFejlBegrundelse" />
+                  <xs:element ref="fase2.1:FunktionelFejlOprindeligAttributVærdi" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

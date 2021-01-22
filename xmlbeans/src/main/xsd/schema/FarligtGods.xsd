@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+	elementFormDefault="qualified" version="1.0">
+	<xs:include schemaLocation="TekstKortType.xsd" />
+	<xs:include schemaLocation="Tekst4Type.xsd" />
+	<xs:include schemaLocation="DatoType.xsd" />
+	<xs:element name="FarligtGodsKode" type="fase2.1:Tekst4Type">
+			<xs:annotation>
+				<xs:documentation>FN kode for et stykke farligt gods</xs:documentation>
+			</xs:annotation>
+	</xs:element>
+	<xs:element name="FarligtGodsBeskrivelse" type="fase2.1:TekstKortType">
+		<xs:annotation>
+			<xs:documentation>Beskrivelse af en FN farligt gods kode</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="FarligtGodsGyldighedsDato" type="fase2.1:DatoType">
+		<xs:annotation>
+			<xs:documentation>Gyldighedsdato for en FN farligt gods kode</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+  <xs:annotation>
+    <xs:documentation>Formålet med denne service er at hente aktørs adviseringer i samlingen</xs:documentation>
+  </xs:annotation>
+  <xs:include schemaLocation="ICS2CompanyNotify_IType.xsd" />
+  <xs:include schemaLocation="ICS2CompanyNotify_OType.xsd" />
+  <xs:include schemaLocation="KompenserTransType.xsd" />
+  <xs:include schemaLocation="KompenserTransSvarType.xsd" />
+  <xs:element name="ICS2CompanyNotifyInterface" type="fase2.1:ICS2CompanyNotifyInterfaceType" />
+  <xs:complexType name="ICS2CompanyNotifyInterfaceType">
+    <xs:choice>
+      <xs:element ref="fase2.1:ICS2CompanyNotify_I" />
+      <xs:element ref="fase2.1:ICS2CompanyNotify_O" />
+      <xs:element ref="fase2.1:KompenserTrans" />
+      <xs:element ref="fase2.1:KompenserTransSvar" />
+    </xs:choice>
+  </xs:complexType>
+</xs:schema>

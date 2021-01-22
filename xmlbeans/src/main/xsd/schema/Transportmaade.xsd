@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	version="1.0">
+	<xs:annotation>
+		<xs:documentation>Transportmåde der bringer varen</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="TalHel2Type.xsd" />
+	<xs:include schemaLocation="DatoType.xsd" />
+	<xs:include schemaLocation="TekstKortType.xsd" />
+	<xs:element name="TransportmådeKode" type="fase2.1:TalHel2Type">
+
+		<xs:annotation>
+			<xs:documentation>Koden for transportmåden - for eksempel 1 for
+				søtransport. Liste kan ses i GB Bilag 38, rubrik 25
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="TransportMaadeBeskrivelse" type="fase2.1:TekstKortType">
+		<xs:annotation>
+			<xs:documentation>Beskrivelse af en transport måde</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="TransportMaadeGyldighedsDato" type="fase2.1:DatoType">
+		<xs:annotation>
+			<xs:documentation>Gyldighedsdato af en transport måde
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+	<xs:annotation>
+		<xs:documentation />
+	</xs:annotation>
+	<xs:include schemaLocation="Tekst6Type.xsd" />
+	<xs:include schemaLocation="Tekst35Type.xsd" />
+	<xs:include schemaLocation="Tekst10Type.xsd" />
+	<xs:include schemaLocation="Tekst70Type.xsd" />
+	<xs:include schemaLocation="Tekst350Type.xsd" />
+		<xs:include schemaLocation="Tekst8Type.xsd" />
+	<xs:element name="LoadingUnloadingPlaceType">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="locationCode" type="fase2.1:Tekst6Type" />
+				<xs:element name="Location" type="fase2.1:Tekst35Type" />
+				<xs:element name="FacilityCode" type="fase2.1:Tekst10Type" />
+				<xs:element name="FacilityName" minOccurs="0"
+					type="fase2.1:Tekst70Type" />
+				<xs:element name="Description" minOccurs="0" type="fase2.1:Tekst350Type" />
+				<xs:element name="SecurityApproved" type="xs:int" />
+				<xs:element name="CustomsApproved" type="xs:int" />
+				<xs:element name="FreePortStatus" type="xs:int" />
+				<xs:element name="CustomsOfficeRefNo" minOccurs="0" type="fase2.1:Tekst8Type" />
+				<xs:element name="CustomsOffice" minOccurs="0" type="fase2.1:Tekst35Type" />
+				<xs:element name="CustomsOfficeSupervisionRefNo"
+					minOccurs="0" type="fase2.1:Tekst8Type" />
+				<xs:element name="PhoneNumber" minOccurs="0" type="fase2.1:Tekst35Type" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

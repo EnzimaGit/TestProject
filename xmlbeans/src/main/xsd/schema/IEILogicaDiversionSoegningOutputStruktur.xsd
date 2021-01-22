@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fase2_1="http://skat.dk/begrebsmodel/2009/01/15/" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:include schemaLocation="Toldsted.xsd"/>
+	<xs:include schemaLocation="SummariskAngivelse.xsd"/>
+	<xs:include schemaLocation="LokaltReferenceNummerType.xsd"/>
+	<xs:include schemaLocation="SummariskIndgangsangivelseOverfoersel.xsd"/>
+	<xs:include schemaLocation="Transportmiddel.xsd"/>
+	<xs:include schemaLocation="Transportmaade.xsd"/>
+	<xs:include schemaLocation="Indgangsangivelse.xsd"/>
+	<xs:include schemaLocation="DatoTidType.xsd"/>
+	<xs:include schemaLocation="Land.xsd"/>
+	<xs:include schemaLocation="ToldOperatoer.xsd"/>
+	<xs:include schemaLocation="Toldsted.xsd"/>
+	<xs:include schemaLocation="EUOperatoer.xsd"/>
+	<xs:include schemaLocation="SummariskAngivelseOmdirigering.xsd"/>
+	<xs:element name="IEILogicaDiversionSoegningOutputStruktur" type="fase2_1:IEILogicaDiversionSoegningOutputStrukturType"/>
+	<xs:complexType name="IEILogicaDiversionSoegningOutputStrukturType">
+		<xs:sequence>
+			<xs:element name="IEILogicaDiversionSoegningOutputElement" minOccurs="0" maxOccurs="9999">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Hoved">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="fase2_1:SummariskAngivelseOmdirigeringLokalReference"/>
+									<xs:element ref="fase2_1:LandKode" minOccurs="0"/>
+									<xs:element ref="fase2_1:TransportmådeKode" minOccurs="0"/>
+									<xs:element ref="fase2_1:TransportmiddelIdentitet" minOccurs="0"/>
+									<xs:element ref="fase2_1:SummariskAngivelseForventetAnkomstDatoTid" minOccurs="0"/>
+									<xs:element ref="fase2_1:SummariskAngivelseRuteReferencenummer" minOccurs="0"/>
+									<xs:element name="TransportMådeVedGrænsen" type="fase2_1:TalHel2Type" minOccurs="0"/>
+									<xs:element name="DatoOgTidForRegistreringAfOmdirigeringen" type="fase2_1:DatoTidType" minOccurs="0"/>
+                                    <xs:element ref="fase2_1:ToldstedReferenceNummer" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Transportør" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="fase2_1:ToldOperatørType"/>
+									<xs:element ref="fase2_1:EUOperatørNavn" minOccurs="0"/>
+									<xs:element ref="fase2_1:ToldOperatørTINNummer"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Registrator" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="fase2_1:ToldOperatørType"/>
+									<xs:element ref="fase2_1:EUOperatørNavn" minOccurs="0"/>
+									<xs:element ref="fase2_1:ToldOperatørTINNummer"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+                        <xs:element name="DataProvider" minOccurs="0">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element ref="fase2_1:ToldOperatørType"/>
+                                    <xs:element ref="fase2_1:EUOperatørNavn" minOccurs="0"/>
+                                    <xs:element ref="fase2_1:ToldOperatørTINNummer"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+						<xs:element name="IndgangsangivelseListe">
+							<xs:complexType>
+								<xs:sequence maxOccurs="9999">
+									<xs:element name="Indgangsangivelse">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="IndgangsangivelseMRNNummer" type="fase2_1:MRNType"/>
+												<xs:element ref="fase2_1:SummariskAngivelseForventetAnkomstDatoTid"/>
+                                                <xs:element ref="fase2_1:ToldstedReferenceNummer" minOccurs="0"/>
+            									<xs:element ref="fase2_1:TransportmiddelIdentitet" minOccurs="0"/>
+            									<xs:element ref="fase2_1:SummariskAngivelseRuteReferencenummer" minOccurs="0"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

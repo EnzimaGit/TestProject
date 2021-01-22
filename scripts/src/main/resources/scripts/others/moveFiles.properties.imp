@@ -1,0 +1,3 @@
+INPUT_DIR=/ftp/ftpSites/${MOUNT}ftp/Files/Amtrix.in
+OUTPUT_DIR=/${MOUNT}/data/testing/Files/Amtrix.in
+FLAG=$'\tSkatTestImp'

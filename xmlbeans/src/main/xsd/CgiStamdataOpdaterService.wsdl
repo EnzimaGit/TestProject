@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+	name="CgiStamdataOpdaterService" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>Formålet med denne 'service' er at opdatere nationale stamdata i ICS</xs:documentation>
+	</xs:annotation>
+
+	<types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+			<xsd:include schemaLocation="schema/CgiStamdataOpdater_IType.xsd" />
+			<xsd:include schemaLocation="schema/CgiStamdataOpdater_OType.xsd" />
+		</xsd:schema>
+	</types>
+
+	<message name="CgiStamdataOpdaterRequest">
+		<part name="Request" element="fase2.1:CgiStamdataOpdater_I" />
+	</message>
+
+	<message name="CgiStamdataOpdaterResponse">
+		<part name="Response" element="fase2.1:CgiStamdataOpdater_O" />
+	</message>
+
+	<portType name="CgiStamdataOpdaterServicePortType">
+		<operation name="NationaleStamdataOpdater">
+			<input message="fase2.1:CgiStamdataOpdaterRequest" />
+			<output message="fase2.1:CgiStamdataOpdaterResponse" />
+		</operation>
+	</portType>
+
+	<binding name="CgiStamdataOpdaterServicePortBinding" type="fase2.1:CgiStamdataOpdaterServicePortType">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<operation name="NationaleStamdataOpdater">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	<service name="CgiStamdataOpdaterService">
+		<port name="CgiStamdataOpdaterServicePortType" binding="fase2.1:CgiStamdataOpdaterServicePortBinding">
+			<soap:address
+				location="http://ics.dk.logica.com:7001/CgiStamdataOpdater/CgiStamdataOpdaterService" />
+		</port>
+	</service>
+</definitions>

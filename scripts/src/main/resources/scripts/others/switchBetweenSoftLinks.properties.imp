@@ -1,0 +1,4 @@
+FILETRANSPORT_INPUT_DIR="/ftp/ftpSites/${MOUNT}ftp/Files"
+FILETRANSPORT_INPUT_DIR_SKATONLY="/${MOUNT}/data/testing/Files"
+ALIAS="Files"
+SCRIPT_PATH=/${MOUNT}/app/oracle/domains/${MOUNT}wls

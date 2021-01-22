@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+  <xs:annotation>
+    <xs:documentation>Selve den meddelelse som fagsystemet sammen med skabelonen danner. Specifikt
+      Restanceinddrivelsesmyndigheden: Forretningsreglen ved udsendelse af meddelelser, hvor der skal indsættes et CPR
+      nr. er: - Til kunden selv indsættes det fulde CPR nr. - Til andre end kunden som er offentlig myndighed indsættes
+      det fulde CPR nr. - Til andre end kunden som IKKE er offentlig myndighed indsættes kun fødselsdato.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:include schemaLocation="XMLType.xsd" />
+  <xs:include schemaLocation="DatoTidType.xsd" />
+  <xs:include schemaLocation="IDType.xsd" />
+  <xs:include schemaLocation="TekstLangType.xsd" />
+  <xs:element name="MeddelelseIndhold" type="fase2.1:XMLType">
+    <xs:annotation>
+      <xs:documentation>Indholdet i en meddelelse medsendes som XML indholdeldende header med indledende oplysninger, og
+        en body med selve meddelelsens tekst eller indhold.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MeddelelseUdsendelseDato" type="fase2.1:DatoTidType">
+    <xs:annotation>
+      <xs:documentation>En datotid datatype, som samlet betegner en dato og tid, med formatet dd-mm-yyyy hh:mm:ss
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MeddelelseAktNummer" type="fase2.1:IDType">
+    <xs:annotation>
+      <xs:documentation>Det aktnummer meddelelsen får tildelt i SKATs ESDH-system.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MeddelelseBemærkning" type="fase2.1:TekstLangType">
+    <xs:annotation>
+      <xs:documentation>Her kan skrives en bemærkning til kunden (i lighed med en følgeseddel)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

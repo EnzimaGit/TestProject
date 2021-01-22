@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+  <xs:annotation>
+    <xs:documentation>Information omkring hvilke toldmæssige aktioner der er taget i forhold til en summarisk angivelse.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:include schemaLocation="Tekst4Type.xsd" />
+  <xs:include schemaLocation="Tekst350Type.xsd" />
+  <xs:element name="ToldFormalitetKode" type="fase2.1:Tekst4Type">
+    <xs:annotation>
+      <xs:documentation>4 cifret kode ( 1 bogstav og 3 tal ) for toldkontroltyper, hvis man har tænkt sig at udføre
+        kontrol</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ToldFormalitetTekst" type="fase2.1:Tekst350Type">
+    <xs:annotation>
+      <xs:documentation>Tekst tilhørende koden for kontroltypen</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

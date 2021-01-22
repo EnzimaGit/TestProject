@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+  <xs:annotation>
+    <xs:documentation />
+  </xs:annotation>
+  <xs:include schemaLocation="Transportmaade.xsd" />
+  <xs:include schemaLocation="Land.xsd" />
+  <xs:include schemaLocation="SummariskIndgangsangivelseOverfoersel.xsd" />
+  <xs:include schemaLocation="Transportmiddel.xsd" />
+  <xs:include schemaLocation="SummariskAngivelse.xsd" />
+  <xs:include schemaLocation="Toldsted.xsd" />
+  <xs:include schemaLocation="Indgangsangivelse.xsd" />
+  <xs:include schemaLocation="VarePost.xsd" />
+  <xs:element name="IE302SummariskIndgangsangivelseEUAnmodningStruktur" type="fase2.1:IE302SummariskIndgangsangivelseEUAnmodningStrukturType" />
+  <xs:complexType name="IE302SummariskIndgangsangivelseEUAnmodningStrukturType">
+    <xs:sequence>
+      <xs:element name="IE302">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="fase2.1:TransportmådeKode" />
+            <xs:element name="FørsteIndgangToldstedLand">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="fase2.1:LandKode" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element ref="fase2.1:SummariskIndgangsangivelseOverførselReference" />
+            <xs:element ref="fase2.1:SummariskIndgangsangivelseOverførselType" />
+            <xs:element ref="fase2.1:TransportmiddelIdentitet" minOccurs="0" />
+            <xs:element ref="fase2.1:SummariskAngivelseForventetAnkomstDatoTid" minOccurs="0" />
+            <xs:element name="AnmodningToldsted">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="fase2.1:ToldstedReferenceNummer" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+
+
+
+            <!--Sequence removed-->
+            <xs:element name="FørsteIndgangToldsted" minOccurs="0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="fase2.1:ToldstedReferenceNummer" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="SummariskAngivelseListe">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="SummariskAngivelse" minOccurs="0" maxOccurs="9999">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element ref="fase2.1:IndgangsangivelseMRNNummer" />
+                        <xs:element name="VarePostListe">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="VarePost" minOccurs="0" maxOccurs="999">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element ref="fase2.1:VarePostLøbeNummer" />
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

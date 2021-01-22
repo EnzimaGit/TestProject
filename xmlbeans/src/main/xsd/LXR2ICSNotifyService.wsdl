@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" name="AdviseringSamlingHentService" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+   
+   <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      
+      <xs:documentation>Formålet med denne 'service' er at skabe et holdested de forskellige notify dokumenttyper</xs:documentation>
+   
+   </xs:annotation>
+   
+   <types>
+      
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+         
+         <xsd:include schemaLocation="schema/LXR2ICSNotifyInterface.xsd"/>
+      
+      </xsd:schema>
+   
+   </types>
+   
+   <message name="LXR2ICSNotifyServiceRequest">
+      
+      <part name="Request" element="fase2.1:LXR2ICSNotify_I"/>
+   
+   </message>
+   
+   <message name="LXR2ICSNotifyServiceResponse">
+      
+      <part name="Response" element="fase2.1:LXR2ICSNotify_O"/>
+   
+   </message>
+   
+   <portType name="LXR2ICSNotifyServicePortType">
+      
+      <operation name="getLXR2ICSNotify">
+         
+         <input message="fase2.1:LXR2ICSNotifyServiceRequest"/>
+         
+         <output message="fase2.1:LXR2ICSNotifyServiceResponse"/>
+      
+      </operation>
+      
+   </portType>
+
+   <binding name="LXR2ICSNotifyServicePortBinding"
+     type="fase2.1:LXR2ICSNotifyServicePortType">
+     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+     <operation name="getLXR2ICSNotify">
+       <soap:operation soapAction="" />
+       <input>
+         <soap:body use="literal" />
+       </input>
+       <output>
+         <soap:body use="literal" />
+       </output>
+     </operation>
+   </binding>
+   <service name="LXR2ICSNotifyService">
+     <port name="LXR2ICSNotifyServicePortType" binding="fase2.1:LXR2ICSNotifyServicePortBinding">
+       <soap:address location="http://ics.dk.logica.com:7001/LXR2ICSNotify/LXR2ICSNotifyService" />
+     </port>
+   </service>
+   
+</definitions>

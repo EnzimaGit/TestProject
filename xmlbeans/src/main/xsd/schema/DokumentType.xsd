@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+	elementFormDefault="qualified" version="1.0">
+	<xs:include schemaLocation="TekstKortType.xsd" />
+	<xs:include schemaLocation="DatoType.xsd" />
+	<xs:element name="DokumentType">
+		<xs:simpleType>
+			<xs:annotation>
+				<xs:documentation>Angiver en dokument type</xs:documentation>
+			</xs:annotation>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="50" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="DokumentTypeBeskrivelse" type="fase2.1:TekstKortType">
+		<xs:annotation>
+			<xs:documentation>Beskrivelse af en dokument type</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="DokumentTypeGyldighedsDato" type="fase2.1:DatoType">
+		<xs:annotation>
+			<xs:documentation>Gyldighedsdato for en dokument type
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>
