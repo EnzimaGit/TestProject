@@ -14,15 +14,15 @@
     </modules>
 
     <scm>
-        <connection>scm:git:https://github.com/EnzimaGit/TestProject</connection>
-        <developerConnection>scm:git:https://github.com/EnzimaGit/TestProject</developerConnection>
+        <connection>scm:git:http://github.com/EnzimaGit/TestProject</connection>
+        <developerConnection>scm:git:http://github.com/EnzimaGit/TestProject</developerConnection>
     </scm>
 
     <distributionManagement>
         <repository>
             <id>distribution</id>
             <name>distribution</name>
-            <url>https://github.com/EnzimaGit/TestProject</url>
+            <url>http://github.com/EnzimaGit/TestProject</url>
         </repository>
     </distributionManagement>
 
