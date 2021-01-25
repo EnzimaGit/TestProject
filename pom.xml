@@ -4,7 +4,7 @@
 
     <groupId>testProject</groupId>
     <artifactId>project</artifactId>
-    <version>1.8-SNAPSHOT</version>
+    <version>1.7</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -16,7 +16,7 @@
     <scm>
         <connection>scm:git:http://github.com/EnzimaGit/TestProject</connection>
         <developerConnection>scm:git:http://github.com/EnzimaGit/TestProject</developerConnection>
-      <tag>HEAD</tag>
+      <tag>project-1.7</tag>
   </scm>
 
     <distributionManagement>
