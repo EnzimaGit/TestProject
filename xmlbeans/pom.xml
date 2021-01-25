@@ -3,7 +3,7 @@
     <parent>
         <artifactId>project</artifactId>
         <groupId>testProject</groupId>
-        <version>1.7</version>
+        <version>1.8</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -42,4 +42,8 @@
         </plugins>
     </build>
 
+
+  <scm>
+    <tag>project-1.8</tag>
+  </scm>
 </project>
